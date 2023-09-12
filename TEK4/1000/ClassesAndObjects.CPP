@@ -1,3 +1,4 @@
+// Done
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -33,14 +34,15 @@ int main()
   int n;
   cin >> n;
   vector<Student> students(n);
-
+  // Student *students = new Student[n];
+  
   for (int i = 0; i < n; i++)
   {
     students[i].input();
   }
 
   int flags = 0;
-  int KristenScores = students[].calculateTotalScore();
+  int KristenScores = students[0].calculateTotalScore();
   for (int i = 1; i < n; i++)
   {
     if (students[i].calculateTotalScore() > KristenScores)
