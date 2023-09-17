@@ -39,6 +39,9 @@ public:
   {
     return (mathPoint + physicPoint + chemiPoint) / 3;
   }
+  void sort()
+  {
+  }
 };
 
 int main()
@@ -57,5 +60,21 @@ int main()
     st[i].output();
     std::cout << "Average Point: " << st[i].calculatorAverage();
     std::cout << std::endl;
+  }
+  float maxA = st[0].calculatorAverage();
+  Student tmp;
+  Student currentIndex;
+  for (size_t i = 0; i < n; i++)
+  {
+    currentIndex = st[i];
+    for (size_t j = i + 1; j < n; j++)
+    {
+      if (currentIndex.calculatorAverage() > st[j].calculatorAverage())
+      {
+        currentIndex = st[j];
+        st[j] = st[j - 1];
+        st[j - 1] = currentIndex;
+      }
+    }
   }
 }
